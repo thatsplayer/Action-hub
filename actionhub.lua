@@ -233,7 +233,7 @@ do
 	Logo.ImageTransparency = 0.5
 	Logo.Position = UDim2.new(0.271609, 0, 0.122057, 0)
 	Logo.Name = "Logo"
-	Logo.Image = "rbxassetid://16073594682"
+	Logo.Image = "rbxassetid://8508980536"
 	Logo.Size = UDim2.new(0.453191, 0, 0.550704, 0)
 	Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Logo.ZIndex = 2
@@ -310,7 +310,7 @@ do
 	Logo_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Logo_1.Position = UDim2.new(0.256362, 0, 0.0700547, 0)
 	Logo_1.Name = "Logo"
-	Logo_1.Image = "rbxassetid://16073594682"
+	Logo_1.Image = "rbxassetid://376649791"
 	Logo_1.Size = UDim2.new(0.481145, 0, 0.133585, 0)
 	Logo_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Logo_1.ZIndex = 2
@@ -858,4 +858,5 @@ do
 		end
 	end
 end
+
 
