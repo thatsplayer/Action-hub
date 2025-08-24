@@ -42,7 +42,7 @@ if _G.loadCustomId then
 end
 
 if not isSupport then
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HohoV2/refs/heads/main/ScriptLoadButOlder.lua'))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/actionV2/refs/heads/main/ScriptLoadButOlder.lua'))()
 	wait(9e9)
 end
 
@@ -67,7 +67,7 @@ function isNotLocked(v)
 end
 
 do	
-	HOHO_Passcheck = Instance.new("ScreenGui")
+	action_Passcheck = Instance.new("ScreenGui")
 	INTRO = Instance.new("CanvasGroup")
 	Wallpaper = Instance.new("ImageLabel")
 	TextHolder = Instance.new("Frame")
@@ -126,13 +126,13 @@ do
 	Gradient_Frame = Instance.new("Frame")
 	UIGradient_4 = Instance.new("UIGradient")
 
-	HOHO_Passcheck.IgnoreGuiInset = true
-	HOHO_Passcheck.ResetOnSpawn = false
-	HOHO_Passcheck.Name = "ActionTeam_Passcheck"
-	HOHO_Passcheck.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-	HOHO_Passcheck.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    CoreGuiAdd(HOHO_Passcheck)
-	HOHO_Passcheck.Enabled = true
+	action_Passcheck.IgnoreGuiInset = true
+	action_Passcheck.ResetOnSpawn = false
+	action_Passcheck.Name = "ActionTeam_Passcheck"
+	action_Passcheck.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+	action_Passcheck.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    CoreGuiAdd(action_Passcheck)
+	action_Passcheck.Enabled = true
 
 	INTRO.BorderSizePixel = 0
 	INTRO.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -142,7 +142,7 @@ do
 	INTRO.Name = "INTRO"
 	INTRO.Position = UDim2.new(0.5, 0, 0.5, 0)
 	INTRO.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	INTRO.Parent = HOHO_Passcheck
+	INTRO.Parent = action_Passcheck
 
 	Hover.ImageColor3 = Color3.fromRGB(255, 51, 51)
 	Hover.BorderSizePixel = 0
@@ -299,7 +299,7 @@ do
 	GET_KEY.Name = "GET_KEY"
 	GET_KEY.Position = UDim2.new(0.5, 0, 0.5, 0)
 	GET_KEY.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GET_KEY.Parent = HOHO_Passcheck
+	GET_KEY.Parent = action_Passcheck
 
 
 	UICorner_1.CornerRadius = UDim.new(0.075, 0)
@@ -649,18 +649,18 @@ do
 	UICorner_9.CornerRadius = UDim.new(0, 10)
 	UICorner_9.Parent = Gradient_Frame
 
-	HOHO_Gen4 = Instance.new("ScreenGui")
+	action_Gen4 = Instance.new("ScreenGui")
 	NOTIFICATION_ZONE = Instance.new("Frame")
 	UIListLayout_Main = Instance.new("UIListLayout")
 	UIAspectRatioConstraint_Main = Instance.new("UIAspectRatioConstraint")
 
-	HOHO_Gen4.IgnoreGuiInset = true
-	HOHO_Gen4.Enabled = true
-	HOHO_Gen4.ResetOnSpawn = false
-	HOHO_Gen4.Name = "ActionTeam_Gen4"
-	HOHO_Gen4.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-	HOHO_Gen4.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    CoreGuiAdd(HOHO_Gen4)
+	action_Gen4.IgnoreGuiInset = true
+	action_Gen4.Enabled = true
+	action_Gen4.ResetOnSpawn = false
+	action_Gen4.Name = "ActionTeam_Gen4"
+	action_Gen4.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+	action_Gen4.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    CoreGuiAdd(action_Gen4)
 
 	NOTIFICATION_ZONE.BorderSizePixel = 0
 	NOTIFICATION_ZONE.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -671,7 +671,7 @@ do
 	NOTIFICATION_ZONE.BackgroundTransparency = 1
 	NOTIFICATION_ZONE.Name = "NOTIFICATION_ZONE"
 	NOTIFICATION_ZONE.Position = UDim2.new(1, 0, 1, 0)
-	NOTIFICATION_ZONE.Parent = HOHO_Gen4
+	NOTIFICATION_ZONE.Parent = action_Gen4
 
 	UIListLayout_Main.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout_Main.VerticalAlignment = Enum.VerticalAlignment.Bottom
@@ -735,7 +735,7 @@ do
         writefile("ActionTeam_Intro.txt", tostring(tick())) 
         
         local preload_content = {}
-        for i,v in pairs(HOHO_Passcheck:GetDescendants()) do
+        for i,v in pairs(action_Passcheck:GetDescendants()) do
             table.insert(preload_content,v)
         end
         for i,v in pairs(PreloadID) do
@@ -767,7 +767,7 @@ do
             },
             Body = HttpService:JSONEncode({
                 ['args'] = {
-                ['code'] = 'hohohub',
+                ['code'] = 'actionhub',
                 ['sex'] = '?species=Goblin&realm=Toril'
             },
             ['cmd'] = 'INVITE_BROWSER',
@@ -802,8 +802,8 @@ do
 			getgenv().script_key = key;
 
 			TweenService:Create(GET_KEY,INFO_DOT25_QUAD,{GroupTransparency = 1}):Play()
-			Debris:AddItem(HOHO_Passcheck,.25)
-			Debris:AddItem(HOHO_Gen4,.25)
+			Debris:AddItem(action_Passcheck,.25)
+			Debris:AddItem(action_Gen4,.25)
 
 			writefile("ActionTeamKeyV4.txt", key)
 
@@ -827,13 +827,13 @@ do
 	Close.MouseButton1Click:Once(function()
 		UI_LOCK = true
 		TweenService:Create(GET_KEY,INFO_DOT25_QUAD,{GroupTransparency = 1}):Play()
-		Debris:AddItem(HOHO_Passcheck,.25)
-		Debris:AddItem(HOHO_Gen4,.25)
+		Debris:AddItem(action_Passcheck,.25)
+		Debris:AddItem(action_Gen4,.25)
 		Result = nil
 	end)
 
 	Get.MouseButton1Click:Connect(function()
-	        setclipboard('https://hohocomunity.xyz/api/getkeyv4?hwid=' .. tick())
+	        setclipboard('https://actioncomunity.xyz/api/getkeyv4?hwid=' .. tick())
 	        StarterGui:SetCore("SendNotification",{
 	            Title = "Key System",
 	            Text = "Key Link 1 Copied!",
@@ -858,3 +858,4 @@ do
 		end
 	end
 end
+
